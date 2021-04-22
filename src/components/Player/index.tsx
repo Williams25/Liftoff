@@ -4,7 +4,7 @@ export const Player = () => {
   return (
     <div className={styles.playerContainer}>
       <header>
-        <img src="playing.svg" alt="tocando agora" />
+        <img src="/playing.svg" alt="tocando agora" />
         <strong>Tocando agora</strong>
       </header>
 
@@ -25,32 +25,32 @@ export const Player = () => {
           <button
             type="button"
           >
-            <img src="shuffle.svg" alt="Embaralhar" />
+            <img src="/shuffle.svg" alt="Embaralhar" />
           </button>
 
           <button
             type="button"
           >
-            <img src="play-previous.svg" alt="Tocar anterior" />
+            <img src="/play-previous.svg" alt="Tocar anterior" />
           </button>
 
           <button
             type="button"
             className={styles.playButton}
           >
-            <img src="play.svg" alt="Tocar" />
+            <img src="/play.svg" alt="Tocar" />
           </button>
 
           <button
             type="button"
           >
-            <img src="play-next.svg" alt="Proximo" />
+            <img src="/play-next.svg" alt="Proximo" />
           </button>
 
           <button
             type="button"
           >
-            <img src="repeat.svg" alt="Repetir" />
+            <img src="/repeat.svg" alt="Repetir" />
           </button>
         </div>
       </footer>
