@@ -7,6 +7,8 @@ import { convertDurationToTimeString } from '../src/utils/convertDurationToTimeS
 import { useRouter } from 'next/router'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useContext } from 'react'
+import { PlayerContext } from '../src/contexts'
 import styles from '../src/styles/home.module.scss'
 
 interface Episode {
@@ -26,6 +28,8 @@ interface HomeProps {
 
 export default function Home({ allEpisodes, latestEpisodes }: HomeProps) {
   const router = useRouter()
+
+  const { play } = useContext(PlayerContext)
 
   return (
     <>
@@ -55,7 +59,15 @@ export default function Home({ allEpisodes, latestEpisodes }: HomeProps) {
                       <span>{episode.file.durationAsString}</span>
                     </div>
 
-                    <button type="button">
+                    <button
+                      type="button"
+                      onClick={() => play({
+                        duration: episode.file.durationAsString,
+                        members: episode.members,
+                        thumbnail: episode.thumbnail,
+                        title: episode.title,
+                        url: episode.file.url
+                      })}>
                       <img src="play-green.svg" alt="Tocar episodio" />
                     </button>
                   </li>
